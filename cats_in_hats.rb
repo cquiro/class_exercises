@@ -6,7 +6,7 @@ cats = Array.new(100, true)
 #creates an empty array of cats with no hats.
 cats_no_hats = []
 
-#Makes one hundred passes over the array.
+#uses variable pass to model the number of times it visits the cats array.
 100.times do |pass|
   #The first pass it flips each element.
   #The second pass it flips every second element.
