@@ -1,47 +1,21 @@
-#beatles.rb
-
-# beatles = [
-#   {
-#     :name => nil,
-#     :nickname => "The Smart One"
-#   },
-#   {
-#     :name => nil,
-#     :nickname => "The Shy One"  
-#   },
-#   {
-#     :name => nil,
-#     :nickname => "The Cute One"
-#     },
-#   {
-#     :name => nil,
-#     :nickname => "The Quiet One"
-#   }
-# ]
-
-# beatles.each do |member|
-#   case member[:nickname]
-#     when "The Smart One" then puts "Hi, I'm #{member[:name] = "John"}.  I'm #{member[:nickname]}!"
-#     when "The Shy One" then puts "Hi, I'm #{member[:name] = "George"}.  I'm #{member[:nickname]}!"
-#     when "The Cute One" then puts "Hi, I'm #{member[:name] = "Paul"}.  I'm #{member[:nickname]}!"
-#     when "The Quiet One" then puts "Hi, I'm #{member[:name] = "Ringo"}.  I'm #{member[:nickname]}!"
-#   end
-# end
-
+#Defines a Band class.
 class Band
-
+  #Band members can be added or deleted (no method added for delete, though). Name of band can only be read.
   attr_accessor :members
   attr_reader :band_name
 
+  #creates a new band taking the band_name as an argument.
   def initialize(band_name)
     @band_name = band_name
     @members = []
   end
 
+  #Adds members to the band taking an array as a list of arguments.
   def add_members(*name)
     @members << name
   end
 
+  #Shows members array when inspecting Band class (p Band)
   def inspect
     @members
   end
@@ -53,59 +27,41 @@ class Beatle
 
   attr_reader :name, :nickname
 
+  #creates a new beatle taking its name and nickname as arguments.
   def initialize(name, nickname)
     @name = name
     @nickname = nickname
   end
 
+  #Beatle greeting.
   def say_hello
-    "Hi, I'm #{@name}.  I'm #{@nickname}!"
+    "Hi, I'm #{@name}. I'm #{@nickname}!"
   end
 
+  #Shows the beatle name when calling to_s (puts Beatle)
   def to_s
     @name
   end
 
+  #Shows the beatle name when calling inspect (p Beatle)
   def inspect
     @name
   end
 
 end
 
-
-# john = Beatle.new("John", "The Smart One")
-# paul = Beatle.new("Paul", "The Cute One")
-# ringo = Beatle.new("Ringo", "The Quiet One")
-# george = Beatle.new("George", "The Shy One")
-
+#creates band The Beatles
 the_beatles = Band.new("The Beatles")
-the_beatles.add_members(Beatle.new("John", "The Smart One"), Beatle.new("Paul", "The Cute One"), Beatle.new("Ringo", "The Quiet One"), Beatle.new("George", "The Shy One"))
-# the_beatles.add_member(Beatle.new("Paul", "The Cute One"))
-# the_beatles.add_member(Beatle.new("Ringo", "The Quiet One"))
-# the_beatles.add_member(Beatle.new("George", "The Shy One"))
+
+#creates instances of the Beatle class.
+john = Beatle.new("John", "The Smart One")
+paul = Beatle.new("Paul", "The Cute One")
+ringo = Beatle.new("Ringo", "The Quiet One")
+george = Beatle.new("George", "The Shy One")
+
+#Adds members to Band instance the_beatles.
+the_beatles.add_members(john, paul, ringo, george)
 
 i = 0
-
+#calls the say_hello method for each of the members of "The Beatles"
 4.times { p the_beatles.members[0][i].say_hello; i +=1 }
-
-
-#puts john.say_hello
-
-
-#p beatles
-#p beatles
-=begin
-array = [1,2,3,4,5]
-
-array.each { |num| 
-   p num
-case num
-when 1 then puts "a"
-when 2 then puts "b"
-when 3 then puts "c"
-when 4 then puts "d"
-when 5 then puts "e"
-end
-}
-=end
-
