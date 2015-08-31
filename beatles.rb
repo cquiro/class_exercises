@@ -19,12 +19,11 @@ class Band
   def inspect
     @members
   end
-
 end
 
 
 class Beatle
-
+  #allows name and nickname to be read.
   attr_reader :name, :nickname
 
   #creates a new beatle taking its name and nickname as arguments.
@@ -47,7 +46,6 @@ class Beatle
   def inspect
     @name
   end
-
 end
 
 #creates band The Beatles
