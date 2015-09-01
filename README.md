@@ -2,6 +2,7 @@ Wyncode
 =======
 Adding files to a GitHub repo as an exercise.
 
-The files uploaded are four ruby files that meant to be run from the terminal.
+These are four ruby files that are to be run from the terminal.
 
-They were written at the beginning of the course.
+They were written at the beginning of the Wyncode course. Three of them involve manipulating
+arrays and the other (beatles.rb) is to practice object oriented programming concepts.
